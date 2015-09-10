@@ -2,12 +2,14 @@ package com.testdouble.gameoflife.replace;
 
 import java.util.Collection;
 
+import com.testdouble.gameoflife.values.Point;
+
 public class Outcome {
 
-	Contents nextContents;
-	Collection<Coordinates> neighbors;
+	public Contents nextContents;
+	public Collection<Point> neighbors;
 
-	public Outcome(Contents contents, Collection<Coordinates> neighbors) {
+	public Outcome(Contents contents, Collection<Point> neighbors) {
 		this.nextContents = contents;
 		this.neighbors = neighbors;
 	}
