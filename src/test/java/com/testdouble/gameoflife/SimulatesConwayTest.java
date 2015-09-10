@@ -8,6 +8,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import com.testdouble.gameoflife.replace.ReplacesWorld;
+import com.testdouble.gameoflife.values.MutableWorld;
+import com.testdouble.gameoflife.values.World;
+
 @RunWith(MockitoJUnitRunner.class)
 public class SimulatesConwayTest {
 
@@ -25,7 +29,7 @@ public class SimulatesConwayTest {
 	
 	@Test
 	public void zeroGenerations() {
-		World seedWorld = new World();
+		World seedWorld = new MutableWorld();
 		when(generatesSeedWorld.generate()).thenReturn(seedWorld);
 		
 		subject.simulate(0, 1337);
@@ -35,9 +39,9 @@ public class SimulatesConwayTest {
 	
 	@Test
 	public void oneGeneration() {
-		World seedWorld = new World();
+		World seedWorld = new MutableWorld();
 		when(generatesSeedWorld.generate()).thenReturn(seedWorld);
-		World world2 = new World();
+		World world2 = new MutableWorld();
 		when(replacesWorld.replace(seedWorld, 1337)).thenReturn(world2);
 		
 		subject.simulate(1, 1337);

@@ -1,5 +1,8 @@
 package com.testdouble.gameoflife;
 
+import com.testdouble.gameoflife.replace.ReplacesWorld;
+import com.testdouble.gameoflife.values.World;
+
 public class SimulatesConway {
 
 	GeneratesSeedWorld generatesSeedWorld;
